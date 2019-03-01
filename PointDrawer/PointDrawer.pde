@@ -55,13 +55,13 @@ void setup() {
   imagecolorwriter.println("background(white);"); // Puts the background. Change if you want a different background color.
   // ------- OKAY NOW I SAY SO ---------- \\
   
-  image = loadImage("800x800ridley.jpg"); // What image you're searching for. This is very important.
+  image = loadImage("image.jpg"); // What image you're searching for. This is very important.
   int dimension = width * height / linestoskip; // Mark the dimensions of the screen.
   image.resize(width, height); // Resize the image you signified to match the screen.
   image.loadPixels(); // Load the pixels of your image.
   for (int i = 0; i < dimension; i += 1) { // Until you reach the end of the image...
     imagecolor = image.get(x, y); // Get the pixel color of the part of the image matching the x and y coordinate signified.
-    if (imagecolor == black) { // If you want to get the lines effect, set anything that says (imagecolor == black) to (imagecolor != black) instead
+    if (imagecolor != black) { // If you want to get the lines effect, set this from (imagecolor != [your bg color]) to (imagecolor == [your bg color])
     // Lines look better but need to be done under lower resolutions to prevent Java from crapping out.
         if (totallines < 1000) { // If you've done under 1000 lines...
         imagecolorwriter.println("set(" + x + "," + y + ",black);"); // Put the set command. Change the black for a different color.
